@@ -1,88 +1,86 @@
-//Alogrithm for Rat in a Maze
-
 #include <bits/stdc++.h>
 using namespace std;
 
-bool Safe(int x, int y, int n, vector<vector<int>> visited, vector<vector<int>> &m )
-{
-    if((x>0 && x<n) && (y>0 && y<n) && visited[x][y] == 0 && m[x][y]==1)
-    {
-        return true;
-    }
-    else
-    return false;
-
+bool isSafe(int x, int y, int n, vector<vector<int>>& mapping, int arr[10][10]) {
+    return (x<0 || y<0 || x>=n || y>=n || mapping[x][y]==1) ? false : (arr[x][y]==1 ? true : false);
 }
-void solve(vector<vector<int>> &m, int n, vector<string>& ans, int x, int y, vector<vector<int>> visited, string path){
-    if(x==n-1 & y==n-1){
-        ans.push_back(path);
+
+void findPaths(int arr[10][10], int n, int x, int y, vector<string>& solution, string output, vector<vector<int>>& mapping) {
+    if(x==n-1 && y==n-1) {
+        solution.push_back (output);
         return;
     }
 
-    visited[x][y] =1;
+    mapping[x][y] = 1;
+    int newx, newy;
 
-    //down
-    int newx = x+1;
-    int newy = y;
-    if(Safe(newx,newy,n, visited,m))
-    {
-        path.push_back('D');
-        solve(m,n,ans,newx,newy,visited,path);
-        path.pop_back();
-    }
-     //left
-    int newx = x;
-    int newy = y-1;
-    if(Safe(newx,newy,n, visited,m))
-    {
-        path.push_back('L');
-        solve(m,n,ans,newx,newy,visited,path);
-        path.pop_back();
-    }
-     //right
-    int newx = x;
-    int newy = y+1;
-    if(Safe(newx,newy,n, visited,m))
-    {
-        path.push_back('R');
-        solve(m,n,ans,newx,newy,visited,path);
-        path.pop_back();
-    }
-     //up
-    int newx = x-1;
-    int newy = y;
-    if(Safe(newx,newy,n, visited,m))
-    {
-        path.push_back('U');
-        solve(m,n,ans,newx,newy,visited,path);
-        path.pop_back();
+    // Checking for UP location
+    newx = x-1;
+    newy = y;
+    if(isSafe(newx, newy, n, mapping, arr)) {
+        output.push_back ('U');
+        findPaths(arr, n, newx, newy, solution, output, mapping);
+        output.pop_back();
     }
 
+    // Checking for DOWN location
+    newx = x+1;
+    newy = y;
+    if(isSafe(newx, newy, n, mapping, arr)) {
+        output.push_back ('D');
+        findPaths(arr, n, newx, newy, solution, output, mapping);
+        output.pop_back();
+    }
 
-    visited[x][y] =0;
+    // Checking for LEFT location
+    newx = x;
+    newy = y-1;
+    if(isSafe(newx, newy, n, mapping, arr)) {
+        output.push_back ('L');
+        findPaths(arr, n, newx, newy, solution, output, mapping);
+        output.pop_back();
+    }
+
+    // Checking for RIGHT location
+    newx = x;
+    newy = y+1;
+    if(isSafe(newx, newy, n, mapping, arr)) {
+        output.push_back ('R');
+        findPaths(arr, n, newx, newy, solution, output, mapping);
+        output.pop_back();
+    }
+
+    mapping[x][y] = 0;
 }
 
-vector<string> Path(vector<vector<int>> &m, int n ){
-    vector<string> ans;
+int main() {
+    int arr[10][10];
+    int n;
 
-    if(m[0][0]==0)
-    {
-        return ans;
-    }
+    cout<<"Enter the value of n: ";
+    cin>>n;
 
-    int srcx = 0;
-    int srcy = 0;
-    vector<vector<int>> visited = m;
-
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            visited[i][j]=0;
+    cout<<"Enter the elements of matrix: ";
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n; j++) {
+            cin>>arr[i][j];
         }
     }
-    string path= "";
-    solve(m,n,ans,srcx,srcy,visited,path);
-    sort(ans.begin(),ans.end());
-    return ans;
+
+    vector<vector<int>> mapping;
+    for(int i=0; i<n; i++) {
+        vector<int> temp (n,0);
+        mapping.push_back (temp);
+    }
+
+    vector<string> solution;
+    string output = "";
+
+    findPaths(arr, n, 0, 0, solution, output, mapping);
+
+    for(int i=0; i<solution.size(); i++) {
+        cout<<solution[i]<<endl;
+    }
+
+    return 0;
 }
