@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+    <Style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 900px;
+            border: 3px solid black;
+            margin: auto;
+            /*for left right auto */
+            margin-top: 20px;
+            font-family: 'Viaoda Libre', cursive;
+            background-color: #f9bd15;
+        }
+
+        .item {
+            border: 2px solid rgb(197, 12, 37);
+            margin: 12px 3px;
+            padding: 12px 3px;
+            background-color: rgb(196, 165, 165);
+        }
+
+        #fruits {
+            float: left;
+            width: 48%;
+        }
+
+        #Computers {
+            float: right;
+            width: 48%;
+        }
+
+        #stationary {
+            /* float: left; */
+            /* clear: right; */
+            clear: both;
+            width: 100%;
+        }
+
+        p {
+            text-align: center;
+            /* text-align: left; */
+            /* text-align: right; */
+        }
+
+        h1 {
+            margin: auto;
+            width: 455px;
+        }
+
+    
+    </Style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to my Store</h1>
+        <div id="fruits" class="item">
+            <h3>Fruits</h3>
+            <p id="Fruitspara" class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nihil
+                repellendus hic dolore porro aliquid rem odio et, tenetur neque, voluptatibus temporibus excepturi, non
+                doloremque voluptatum deserunt distinctio similique veniam!</p>
+        </div>
+
+        <div id="Computers" class="item">
+            <h3>Computers</h3>
+            <p id="Computerspara" class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nihil
+                repellendus hic dolore porro aliquid rem odio et, tenetur neque, voluptatibus temporibus excepturi, non
+                doloremque voluptatum deserunt distinctio similique veniam! Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Deleniti nulla ad, nam sit, debitis aut saepe molestias magnam aspernatur quis ipsum
+                suscipit enim voluptas commodi eligendi quos tempore esse eius quod nemo excepturi placeat.</p>
+        </div>
+
+        <div id="stationary" class="item">
+            <h3>Stationary</h3>
+            <p id="Stationarypara" class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni nihil
+                repellendus hic dolore porro aliquid rem odio et, tenetur neque, voluptatibus temporibus excepturi, non
+                doloremque voluptatum deserunt distinctio similique veniam!</p>
+        </div>
+    </div><br><br>
+
+    <a href="/BoxModel.html" target="_blank">Previous lecture</a>
+    <a href="stylinglinks.html" target="_blank">Next Lecture</a>
+</body>
+
+</html>
