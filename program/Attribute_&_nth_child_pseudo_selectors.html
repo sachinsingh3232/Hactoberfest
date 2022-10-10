@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth sheudo</title>
+    <style>
+        .container {
+            margin: 34px 23px;
+            display: block;
+            width: 234px;
+            margin: auto;
+        }
+
+        input {
+            display: block;
+        }
+        input[type = "text"]{
+            color: red;
+            background-color: rgb(42, 42, 48);
+            border: 2px solid black;
+        }
+       a[target]{
+           color: brown;
+           text-decoration: none;
+       }
+       a[target= "_self"]{
+           color: rgb(42, 165, 69);
+           text-decoration: none;
+       }
+       /* li:nth-child(2n){
+           color: rgb(47, 15, 231);
+       }
+       li:nth-child(3n + 1){
+           color: rgb(231, 15, 15);
+       } */
+       li:nth-child(odd){
+           color: rgb(231, 15, 15);
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container ">
+        <h1><a href="http://google.com" target = "_blank">Go to Google</a></h1>
+        <h1><a href="http://Facebook.com" target = "_self">Go to Facebook</a></h1>
+        <form action="" class="form-control">
+            <input type="text" placeholder="Enter your name">
+            <input type="text" placeholder="Enter your password">
+            <input type="submit" value="Submit">
+        </form>
+        <ul>
+            <li class="item" id="id1">Item1</li>
+            <li class="item" id="id2">Item2</li>
+            <li class="item" id="id3">Item3</li>
+            <li class="item" id="id4">Item4</li>
+            <li class="item" id="id6">Item6</li>
+            <li class="item" id="id7">Item7</li>
+            <li class="item" id="id8">Item8</li>
+            <li class="item" id="id9">Item9</li>
+            <li class="item" id="id10">Item10</li>
+        </ul>
+    </div>
+    <a href="/More_on_Selectors.html" target="_blank">Previous lecture</a><br>
+    <a href="/Before_&_After_Pseudo_selectors.html" target="_blank">Next Lecture</a>
+</body>
+
+</html>
