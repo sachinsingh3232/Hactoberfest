@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box & Text Shadow</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .card {
+            box-sizing: border-box;
+            width: 23%;
+        }
+
+        .card {
+            padding: 23px 12px;
+            /* border: 2px solid red; */
+            margin: 23px 12px;
+            background-color: sandybrown;
+            /* box-shadow: 5px 10px black; downside shadow  */
+            /* box-shadow: -5px -10px black;  upside shadow  */
+            /* box-shadow: 5px 10px 24px green;  */
+            /* box-shadow: -5px -10px 24px green; */
+            /* box-shadow: -5px -10px 24px 10px green; */
+            /* box-shadow: -5px -10px 24px 10px rgba(0, 0, 0, 0.5); */
+            /* box-shadow: offset-x    offset-y         blur-radius      spread-radius      color; */
+            box-shadow: inset 5px 5px green;
+            box-shadow: 5px 5px green, 7px 7px red;
+
+        }
+
+        .card h2 {
+            /* text-shadow: 1px 2px white; */
+            /* text-shadow: 1px 2px 2px white; */
+            text-shadow: 1px 2px 5px white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Card1</h2>
+            Lorem Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore quas nesciunt quod eos vel, officiis
+            recusandae voluptas cupiditate totam veniam? ipsum dolor, sit amet consectetur adipisicing elit.
+            Consequuntur, quam ad odio perferendis, officia
+            laudantium mollitia eum corrupti quibusdam unde hic voluptate, veritatis corporis sed sint explicabo nostrum
+            placeat libero delectus quo eos a!
+        </div>
+        <div class="card">
+            <h2>Card2</h2>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, quam ad odio perferendis, officia
+            laudantium mollitia eum corrupti quibusdam unde hic voluptate, veritatis corporis sed sint explicabo nostrum
+            placeat libero delectus quo eos a!
+        </div>
+        <div class="card">
+            <h2>Card3</h2>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, quam ad odio perferendis, officia
+            laudantium mollitia eum corrupti quibusdam unde hic voluptate, veritatis corporis sed sint explicabo nostrum
+            placeat libero delectus quo eos a!
+        </div>
+        <div class="card">
+            <h2>Card4</h2>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur, quam ad odio perferendis, officia
+            laudantium mollitia eum corrupti quibusdam unde hic voluptate, veritatis corporis sed sint explicabo nostrum
+            placeat libero delectus quo eos a!
+        </div>
+    </div>
+    <a href="/Before_&_After_Pseudo_selectors.html" target="_blank">Previous lecture</a><br>
+    <a href="/Variables_&_custom_properties.html" target="_blank">Next Lecture</a>
+</body>
+
+</html>
