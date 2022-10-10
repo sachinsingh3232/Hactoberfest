@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and after pseudo Selectors</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            margin: 27px 23px;
+            padding: 0px 50px;
+            align-items: center;
+            height: 344px;
+            /* border: 2px solid rgb(71, 255, 102); */
+            border-radius: 10px;
+            justify-content: center;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            background: url('https://source.unsplash.com/collection/190727/1600x900') no-repeat center center/cover;
+        }
+
+        .Navigation {
+            display: flex;
+            border: 2px solid red;
+            background-color: red;
+            border-radius: 9px;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px 104px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul div {
+            padding: 6px 36px;
+        }
+
+        ul div input {
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 5px 0px;
+            text-align: center;
+        }
+
+        header::before {
+            content: "";
+            background: url('https://source.unsplash.com/collection/190727/1600x900') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            /* opacity to make image light */
+        }
+
+        /* section::before{
+            content: "Adding content before section";
+            color: rgb(14, 12, 148);
+        }
+        section::after{
+            content: "Adding content after section";
+            color: yellow;
+        } */
+        h3 {
+            font-size: 4em;
+        }
+
+        p {
+            padding: 0px 0px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <ul class="Navigation">
+                <li class="item"><a href="#">About</a></li>
+                <li class="item"><a href="#">Home</a></li>
+                <li class="item"><a href="#">Services</a></li>
+                <li class="item"><a href="#">Contact us</a></li>
+                <div class="search">
+                    <input type="text" name="Search" id="Search" placeholder="Search Here">
+            </ul>
+        </nav>
+        <section>
+            <h3>Welcome to coding world</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, animi, dicta dolores a corporis
+                excepturi officia reprehenderit minus, aliquam labore dignissimos quae corrupti nobis obcaecati tempora.
+                Voluptatem, ut. Quidem exercitationem reiciendis maiores omnis iusto!
+            </p>
+        </section> <br>
+        <a href="/Attribute_&_nth_child_pseudo_selectors.html" target="_blank">Previous lecture</a><br>
+        <a href="/Box_shadow_&_Text_shadow.html" target="_blank">Next Lecture</a>
+    </header>
+</body>
+
+</html>
