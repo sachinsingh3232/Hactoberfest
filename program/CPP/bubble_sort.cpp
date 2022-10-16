@@ -30,7 +30,7 @@ void sortBubble(int arr[], int n)
 }
 int main()
 {
-    int arr[6] = {10, 12, 45, 1, 23, 90};
-    sortBubble(arr, 6);
-    printArr(arr, 6);
+    int arr[7] = {10, 12, 45, 1, 23, 90,21};
+    sortBubble(arr, 7);
+    printArr(arr, 7);
 }
