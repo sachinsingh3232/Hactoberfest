@@ -85,8 +85,10 @@ int main()
     while (!s.isEmpty())
     {
         // print top element in stack
+        int a=s.top();
         cout << s.top() << " ";
         // remove top element in stack
         s.pop();
+        cout<< a<<" has been Removed from the stack.";
     }
 }
